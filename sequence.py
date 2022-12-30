@@ -1,4 +1,5 @@
 
+# 리스트
 list_a = [1, 2, 3, 4]
 list_b = ["a", "b", "c"]
 list_c = [True, False]
@@ -90,3 +91,77 @@ print("Java Script" not in list_lan)
 td_number = [[10, 20, 30], [1, 2, 3]]
 print(td_number)
 print(td_number[0][1])
+
+# 튜플
+numbers = (1, 2, 3, 4)
+# 위 튜플은 numbers = 1, 2, 3, 4 표현과 같다.
+# 단, 만약 요소가 한개라면 반드시 ()를 붙어줘야 튜플로 선언된다.
+print(numbers)
+print(numbers + numbers)
+print(numbers * 2)
+
+# 2차원, 3차원 튜플
+numbers = (1, 2, 3, (4, 5, (6, 7)))
+print(numbers)
+
+# 튜플 인덱싱
+print(numbers.index(3))
+
+print(numbers[3])
+
+numbers = 1, 2, 3, 4
+# *number3는 나머지 요소를 다 넣겠다는 뜻입니다.
+number1, number2, *number3 = numbers
+print(number1, number2, number3)
+
+# 요소 추가 (원래 튜플은 요소 추가가 안된다)
+# 아래 내용은 요소가 추가된 것처럼 보이지만, 사실 다른 주소로 튜플을 만든 것
+numbers += 5, 6,
+print(numbers)
+
+# 집합
+# 특징: 순서가 정해져 있지 않고, 중복을 허용하지 않는다.
+week = {"월요일", "화요일", "수요일", "목요일", "금요일", "토요일", "일요일", "월요일"}
+print(week)
+
+# 요소 추가
+# add 가능한 요소 : 123, "문자", True, ("튜플")
+# add 불가능한 요소 : [1, 2, 3], {keys:value}
+week.add("화요일")
+print(week)
+
+# 0, 1이 요소로 들어가있는 경우 True, False는 중복으로 여겨 추가되지 않는다.
+a = {0, "abc", 1}
+a.add(True)
+print(a)
+
+# 튜플안에 있는 요소를 추가해주기
+week.update(("일주일",))
+print(week)
+
+# 리스트와 딕셔너리에 있는 요소 추가하기
+# 단, 딕셔너리는 key값만 요소로 들어간다.
+week.update(["일주일"], {"한달": 123})
+print(week)
+
+# set 함수: 리스트를 집합으로 변환한다.
+# 중복은 제거되고, 순서가 뒤바뀐다.
+week = set(["월요일", "화요일", "수요일", "목요일", "금요일", "토요일", "일요일", "금요일"])
+print(week)
+
+# 집합 연산
+A = {1, 2, 3, 4, 5}
+B = {3, 4, 5, 6, 7}
+
+# 합집합 : 중복을 제거하고 합쳐진다.
+print(A | B)
+
+# 교집합 : 중복된 값만 반환
+print(A & B)
+
+# 차집합 : A - B (A라는 집합에서 B라는 집합에 있는 원소를 뺀 집합)
+print(A - B)
+
+# 삭제
+A.remove(4)
+print(A)
