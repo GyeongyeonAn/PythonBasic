@@ -12,6 +12,7 @@ print(number + number2)
 # 형번환을 통해 숫자 연산을 수행한다.
 print(int(number) + int(number2))
 
+
 # if 조건문
 if True:
     print("실행할 문장입니다.")
