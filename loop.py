@@ -86,3 +86,17 @@ list_2nd = [[1, 2, 3], ["a", "b", "c"]]
 for i in list_2nd:
     for j in i:
         print(j)
+
+# 딕셔너리에 차가운 메뉴와 뜨거운 메뉴 각각 출력하기
+menu = {"아이스 아메리카노": 3000, "아메리카노": 2500,
+        "아이스 라떼": 4000, "라떼": 3500, "아이스크림": 8000}
+
+print("차가운 메뉴")
+for key, value in menu.items():
+    if key[0:3] == "아이스":
+        print("제품 : {}, 가격 {}".format(key, value))
+
+print("뜨거운 메뉴")
+for key, value in menu.items():
+    if key[0:3] != "아이스":
+        print("제품 : {}, 가격 {}".format(key, value))
